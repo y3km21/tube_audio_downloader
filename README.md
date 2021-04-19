@@ -2,8 +2,6 @@
 
 ## App Install
 
----
-
 ### You will need to install [Python3.8](https://www.python.org/downloads/release/python-389/)
 
 - ### macOS
@@ -16,8 +14,6 @@ Please check the directory where python3.8 exists. &#x1f609;
 Python3.8 installation using WindowsStore is **not recommended** because PATH is not added. &#x1f62d;
 
 ## Development
-
----
 
 ### Install dependencies
 
