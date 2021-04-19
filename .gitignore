@@ -11,3 +11,5 @@ old
 .DS_Store
 .vscode
 app
+/icon.png
+/icons.svg
