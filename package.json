@@ -1,0 +1,77 @@
+{
+  "name": "tube-audio-downloader",
+  "private": true,
+  "version": "0.7.0",
+  "description": "Youtube Audio Downloader",
+  "main": "dist/main.js",
+  "scripts": {
+    "start_r": "DISABLE_ELECTRON=1 webpack serve --mode=development --config webpack.config.js",
+    "build_r": "webpack",
+    "start_e": "npx electron ./",
+    "build_e": "electron-builder  --mac --x64",
+    "build_e_win": "electron-builder --win --x64 --ia32"
+  },
+  "build": {
+    "appId": "com.electron.tubeAudioDownloader",
+    "directories": {
+      "output": "app"
+    },
+    "files": [
+      "assets",
+      "dist",
+      "!dist/python/venv",
+      "!dist/python/pypath.json",
+      "package.json",
+      "package-lock.json"
+    ],
+    "asarUnpack": [
+      "dist/python/bin",
+      "dist/python/py",
+      "dist/python/python_init.js"
+    ],
+    "mac": {
+      "icon": "assets/mac/icon_mac.icns",
+      "target": [
+        "dmg"
+      ],
+      "asarUnpack": [
+        "!dist/python/bin/*.exe"
+      ]
+    },
+    "win": {
+      "icon": "assets/win/icon.png",
+      "target": [
+        "portable",
+        "nsis-web"
+      ],
+      "asarUnpack": [
+        "!dist/python/bin/*",
+        "dist/python/bin/*.exe",
+        "dist/python/bin/LICENSE"
+      ]
+    }
+  },
+  "author": "Yusuke Mitsui",
+  "license": "MIT",
+  "dependencies": {
+    "python-shell": "^3.0.0",
+    "rmfr": "^2.0.0",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.2",
+    "electron": "^12.0.4",
+    "electron-builder": "^22.10.5",
+    "electron-rebuild": "^2.3.5",
+    "elm": "^0.19.1-5",
+    "elm-hot-webpack-loader": "^1.1.8",
+    "elm-webpack-loader": "^8.0.0",
+    "html-webpack-plugin": "^5.3.1",
+    "sass": "^1.32.10",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

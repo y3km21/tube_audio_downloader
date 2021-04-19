@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+.window_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  //height: 300px;
+  border: solid 2px $sub-color2;
+  border-radius: $default-radius;
+}
+
+.title_bar {
+  background-color: rgb(167, 167, 167);
+  width: 100%;
+  padding: 4px 2px 4px 2px;
+  align-items: center;
+  justify-content: center;
+  button {
+    margin: 0 2px 0 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: red;
+  }
+  button:hover {
+    background-color: rgb(173, 2, 2);
+  }
+  button[type="Inactive"] {
+    background-color: rgb(182, 122, 122);
+    pointer-events: none;
+  }
+  span {
+    margin: 0 0 0 10px;
+  }
+}
+
+.content_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  padding: 5px 0 5px 0;
+  -webkit-app-region: no-drag;
+}
+
+@mixin row_wrap {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0 5px 0;
+  padding: 0 50px 0 50px;
+  label {
+    width: 9rem;
+    text-align: right;
+    padding-right: 0.5rem;
+  }
+  input {
+    padding: 2px 2px 2px 2px;
+    width: 30rem;
+  }
+  button {
+    margin: 0 5px 0 5px;
+    padding: 2px 2px 2px 2px;
+    text-align: center;
+    border: black 1px solid;
+    border-radius: 3px;
+    background-color: lightgrey;
+  }
+  button:hover {
+    background-color: rgb(143, 142, 142);
+  }
+  button[type="Inactive"] {
+    background-color: lightgray;
+    color: rgba($color: #000000, $alpha: 0.5);
+    pointer-events: none;
+  }
+}
+
+.row_wrapper {
+  @include row_wrap();
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.row_center_wrapper {
+  @include row_wrap();
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 10em;
+  }
+}
+
+.status {
+  border: solid 2px black;
+  width: 100%;
+  padding: 0 2px 0 2px;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.log_wrapper {
+  margin: 0 50px 0 50px;
+  border: solid 2px black;
+
+  padding: 2px 2px 2px 2px;
+  display: flex;
+  flex-direction: column;
+  height: calc(8rem * 1.2 + 4px);
+  overflow-y: scroll;
+  span {
+  }
+}

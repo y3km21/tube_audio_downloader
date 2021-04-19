@@ -1,0 +1,13 @@
+node_modules
+elm-stuff
+.cache
+/dist/*
+!/dist/index.html
+!/dist/python
+/dist/python/venv
+/dist/python/pypath.json
+!/dist/main.js
+old
+.DS_Store
+.vscode
+app
